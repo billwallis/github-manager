@@ -1,4 +1,4 @@
-from python_template import main
+from github_manager import main
 
 
 def test__main__happy_path():

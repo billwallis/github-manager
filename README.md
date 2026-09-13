@@ -23,3 +23,10 @@ Install the dependencies:
 pip install --editable . --group dev --group test
 pre-commit install --install-hooks
 ```
+
+## Usage
+
+```shell
+ghm org <org-name>
+ghm repo <org-name>/<repo-name>
+```

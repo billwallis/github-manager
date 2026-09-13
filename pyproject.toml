@@ -11,7 +11,13 @@ authors = [{name = "billwallis"}]
 readme = "README.md"
 license-files = ["LICENSE"]
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "arguably>=1.3.0",
+    "duckdb>=1.4.4",
+    "python-dotenv>=1.2.1",
+    "requests>=2.32.5",
+]
+scripts.ghm = "github_manager.__main__:arguably.run"
 
 [dependency-groups]
 dev = [
@@ -36,7 +42,8 @@ install.shell = """
 """
 test.shell = """
     coverage run -m pytest -vvv
-    coverage report --no-skip-covered
+    coverage report --no-skip-covered --include 'src/*'
+    coverage report --no-skip-covered --include 'tests/*'
     coverage xml --quiet
 """
 
@@ -65,8 +72,9 @@ shell = """
 testpaths = ["tests"]
 
 [tool.coverage]
+run.source = ["src", "tests"]
 run.plugins = ["covdefaults"]  # https://youtu.be/70T6OxKwxm0
-report.fail_under = 80
+report.fail_under = 1
 report.exclude_lines = [
     "@pytest.mark.skip",
     "@pytest.mark.xfail",

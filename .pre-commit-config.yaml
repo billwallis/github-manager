@@ -76,13 +76,13 @@ repos:
         name: Run unit tests
         entry: coverage run -m pytest --quiet
       - <<: *tests-config
-        id: coverage-xml
-        name: Write coverage XML report
-        entry: coverage xml --quiet
-      - <<: *tests-config
         id: test-coverage
         name: Tests have 100% run coverage
         entry: coverage report --no-skip-covered --include 'tests/*' --fail-under 100
+      - <<: *tests-config
+        id: coverage-xml
+        name: Write coverage XML report
+        entry: coverage xml --include 'src/*' --quiet
       - <<: *tests-config
         id: coverage-badge
         name: Generate coverage badge

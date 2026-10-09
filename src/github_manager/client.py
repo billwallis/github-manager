@@ -15,7 +15,7 @@ import requests
 REST_API_BASE_URL = "https://api.github.com"
 GRAPHQL_API_BASE_URL = "https://api.github.com/graphql"
 DEFAULT_TIMEOUT_SECONDS = 60
-DEFAULT_PAGE_SIZE = 50
+DEFAULT_PAGE_SIZE = 20
 MAX_RETRIES = 5
 
 

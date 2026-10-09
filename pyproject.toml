@@ -12,12 +12,11 @@ readme = "README.md"
 license-files = ["LICENSE"]
 requires-python = ">=3.13"
 dependencies = [
-    "arguably>=1.3.0",
     "duckdb>=1.4.4",
     "python-dotenv>=1.2.1",
     "requests>=2.32.5",
 ]
-scripts.ghm = "github_manager.__main__:arguably.run"
+scripts.ghm = "github_manager.__main__:main"
 
 [dependency-groups]
 dev = [

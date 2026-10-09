@@ -3,12 +3,9 @@ import os
 import pathlib
 from typing import Any
 
-import dotenv
 import duckdb
 
 from github_manager import client, utils
-
-dotenv.load_dotenv()
 
 HERE = pathlib.Path(__file__).parent
 QUERIES = HERE / "queries"
